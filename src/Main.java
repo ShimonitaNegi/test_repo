@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -30,7 +31,7 @@ public class Main {
     private static void createAndShowGui() {
         JFrame frame = new JFrame("Hello World アプリ");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(420, 180);
+        frame.setSize(520, 160);
         frame.setLocationRelativeTo(null); // ウィンドウを画面中央に表示します。
 
         // CardLayout を持つ「入れ物」のパネルを作り、そこに 2 画面を登録します。
@@ -38,17 +39,20 @@ public class Main {
         JPanel container = new JPanel(cardLayout);
 
         // ---- 入力画面（1 枚目のカード）----
-        JPanel inputPanel = new JPanel(new FlowLayout());
+        // 上段に説明ラベル、中段に入力欄と「決定」ボタン、下段にエラーメッセージを並べます。
+        JPanel inputPanel = new JPanel(new BorderLayout());
         JLabel guideLabel = new JLabel("全角文字を入力してください（記号は不可）");
         JTextField textField = new JTextField(16);
         textField.setBackground(NORMAL_COLOR);
         JButton decideButton = new JButton("決定");
         JLabel errorLabel = new JLabel(" "); // エラーメッセージ表示用のラベルです。
         errorLabel.setForeground(Color.RED);
-        inputPanel.add(guideLabel);
-        inputPanel.add(textField);
-        inputPanel.add(decideButton);
-        inputPanel.add(errorLabel);
+        JPanel inputRow = new JPanel(new FlowLayout());
+        inputRow.add(textField);
+        inputRow.add(decideButton);
+        inputPanel.add(guideLabel, BorderLayout.NORTH);
+        inputPanel.add(inputRow, BorderLayout.CENTER);
+        inputPanel.add(errorLabel, BorderLayout.SOUTH);
 
         // ---- 表示画面（2 枚目のカード）----
         JPanel resultPanel = new JPanel(new FlowLayout());
