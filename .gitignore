@@ -1,0 +1,32 @@
+# コンパイル済みクラスファイル
+*.class
+
+# ビルド成果物
+target/
+build/
+out/
+bin/
+
+# Gradle / Maven
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE 関連
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+
+# ログ・パッケージ
+*.log
+*.jar
+*.war
+*.ear
+
+# OS が生成するファイル
+.DS_Store
+Thumbs.db
