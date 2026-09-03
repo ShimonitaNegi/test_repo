@@ -1,0 +1,27 @@
+# バイトコード・キャッシュ
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 仮想環境
+.venv/
+venv/
+env/
+
+# 環境変数ファイル
+.env
+
+# パッケージング・ビルド成果物
+build/
+dist/
+*.egg-info/
+
+# テスト・カバレッジ
+.pytest_cache/
+.coverage
+htmlcov/
+
+# エディタ・OS が生成するファイル
+.vscode/
+.idea/
+.DS_Store
